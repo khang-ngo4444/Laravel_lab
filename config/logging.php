@@ -73,6 +73,15 @@ return [
             'replace_placeholders' => true,
         ],
 
+        // shopping actions (view product, add/remove cart item)
+        'user_actions' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/user_actions.log'),
+            'level' => 'info',
+            'days' => env('LOG_DAILY_DAYS', 14),
+            'replace_placeholders' => true,
+        ],
+
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
